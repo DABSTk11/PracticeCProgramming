@@ -24,9 +24,13 @@ int main()
 
 }
 
+// whenever I am using a pointer it means I am
+// directly manipulating the memory addresses
 void compare(char* x, char* y)
 {
     int val = 1;
+
+    // strlen = gives the integer value
 
     if(strlen(x) > strlen(y))
     {
