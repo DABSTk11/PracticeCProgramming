@@ -1,0 +1,65 @@
+In C we cannot direclty create a string, we have to create a character array.
+int char[5];    = Creates a string of 5 character long
+
+Null character (\0) should be present in every character array to identify the strings end/ charcter end.
+
+When used double quotation "" compiler automatically adds the null character (\0), if the size is not declared
+char str1[] = "Hello";     = automatically adds the null character
+
+if the size is declared then we have to leave space for the null character, so always assign the memory space 1 greater than the length of string
+i.e if length of string is n, we need to assign n+1 spaces for null character(\0)
+char str2[6] = "Hello";    = When defining size the size
+
+If we are defining the string in a character(character by character) form we should manually add the null character.
+char str3[6] = {'H', 'e', 'l', 'l', 'o', '\0'};      = manually added null character(\0)
+
+We can also assign character by charcter without size with null character, size is then automatically determines by the compiler
+char str4[] = {'H', 'e', 'l', 'l', 'o', '\0'}; 
+
+NOTE:  WHEN A SEQUENCE OF CHARACTERS ENCLOSED IN THE DOUBLE QUOTATION MARKS IS ENCOUNTERED BY THE COMPILER, A NULL CHARACTER ('\0') IS APPENDED AT THE END OF THE STRING BY DEFAULT
+
+Though C don't provide the strings data type we can use the "%s" specifier to print or read the content.
+
+Reading a string
+
+scanf() = stops working as soon as it encounters whitespace or newline. Not good for string to take an input
+
+gets() = read a string or text of line and store the input in the string variable. Terminates when encounter newline character(enter key)
+
+fgets() = reads a text line or a string from the specified file or console and then stores it to the respective string variable.
+        = Terminates when encounter a newline character(enter key) and can also stops when EOF(end of file) is reached or even if the string length exceeds the specified limit, n - 1.
+
+Example on "readingString.C" file  
+
+gets() method is depricated(have a better version of this, about to be removed from the language), we use fgets() instead.
+
+
+puts() = use to write a string to the standard output(usually console) followed by newline character
+       = this function automatically append new line character at the end unlike scanf(where we have to explictly apply newline character(\n))
+
+
+String function are defined in <string.h> header files
+
+strlen() = takes string as an argument and returns the length of the string(unsigned integer). Doesn't count the null character
+
+strcpy() = string copy
+char* strcpy(char* destination, const char* source);
+strcpy() = copies the string pointer by source including null character to the destination. When using strcpy() destination size should be large enough to hold the incomming data (size should be equal or greater than source), else gives an undefined behaviour.
+
+strcmp() = string comparison
+int strcmp(const char* str1, const char* str2);
+compares string character by character. if strings are equal returns 0.
+returns >0 (positive), if the fist non-matching character in str1 is greater (in ASCII) than that of str2
+retunr <0 (negative), if the first non-matching character in str1 is lower (in ASCII) than that of str2
+
+strcat() = string concatenation
+char *strcat(char* destination, const char* source);
+concatenates the destination and source strings and store the result in destination string
+the size of the destination string should be large enough to hold the resultant string. If not we get "segmentation fault error".
+
+
+
+
+
+
+
