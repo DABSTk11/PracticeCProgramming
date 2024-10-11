@@ -28,7 +28,7 @@ int main()
 void useScanf(char str[])
 {
     //reading string
-    printf("Enter a word: ");
+    printf("Enter a word for scanf: ");
     scanf("%s", str);   // This won't read after the space or after the newline character
 
     // printing string
@@ -38,7 +38,7 @@ void useScanf(char str[])
 void useGets(char str[])
 {
     //reading string
-    printf("Enter a word: ");
+    printf("Enter a word for gets: ");
     gets(str);
 
     // printing string
@@ -48,7 +48,7 @@ void useGets(char str[])
 void useFgets(char str[])
 {
     // reading string
-    printf("Enter a word: ");
+    printf("Enter a word for fgets: ");
     fgets(str, MAX, stdin);
 
     // print string

@@ -58,6 +58,40 @@ concatenates the destination and source strings and store the result in destinat
 the size of the destination string should be large enough to hold the resultant string. If not we get "segmentation fault error".
 
 
+Array of String: C
+
+We use two dimensional array for the list of strings
+
+char varName[r][c] = {list of string};
+
+Example C:  char varName[10][50];
+In above we are declaring to create a list of 10 string of maximum 50 character each.
+
+Each string is terminate with a null character(\0).
+
+We can't directly change or assign the values to an array of strings.
+char arr[4][15] = {"BAR", "CAR", "Tar", "Honda", "Wrist"};
+
+arr[0] = "PANDA";       Gives Error = Assignment to expression with an array type
+
+We need to use the strcpy() function to change the values
+strcpy(arr[0], "Panda");        // copy values in arr[0]
+
+When we create a list as in Example C, we would waste the memory if every strings is not of same length. 
+As the words that are only 5 - 10 character long will only occupy the fist 5 - 10 address and remaining is not used.
+So, to overcome memory wastage we use array of pointers.
+
+char *arr[] = {"bar", "remote", "laptop", "clock"};
+Here, pointer to the first character of the string literal stored.
+That is for "bar" pointer is pointing to 'b', for "remote" pointer is pointing to 'r', likewise
+other are stored. 
+
+
+
+
+
+
+
 
 
 
